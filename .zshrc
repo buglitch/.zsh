@@ -7,25 +7,8 @@ fi
 [[ ! -f ~/.zsh/aliases.sh ]] || source ~/.zsh/aliases.sh
 [[ ! -f ~/.aliases ]] || source ~/.aliases
 
-# Base16-256 Tango + Arc
-if [ -n "$TMUX" ]; then
-  put_template() { printf '\033Ptmux;\033\033]4;%d;rgb:%s\033\033\\\033\\' $@; }
-elif [ "${TERM%%[-.]*}" = "screen" ]; then
-  put_template() { printf '\033P\033]4;%d;rgb:%s\007\033\\' $@; }
-elif [ "${TERM%%-*}" = "linux" ]; then
-  put_template() { [ $1 -lt 16 ] && printf "\e]P%x%s" $1 $(echo $2 | sed 's/\///g'); }
-else
-  put_template() { printf '\033]4;%d;rgb:%s\033\\' $@; }
-fi
-
-put_template 16 "F5/79/00"
-put_template 17 "8F/59/02" 
-put_template 18 "30/36/42"
-put_template 19 "41/4A/59"
-put_template 20 "DD/DD/DD"
-put_template 21 "F5/F6/F7"
-
-unset put_template
+# Base16 shell
+[[ ! -f ~/.zsh/base16.sh ]] || source ~/.zsh/base16.sh
 
 # OMZ config
 setopt HIST_EXPIRE_DUPS_FIRST
