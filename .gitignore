@@ -1,3 +1,4 @@
+*.zwc
 antigen/
 antigen.zsh
 p10k.zsh
