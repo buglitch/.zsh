@@ -36,14 +36,15 @@ source ~/.zsh/antigen.zsh
 
 antigen use oh-my-zsh
 
-antigen bundle gitfast
-antigen bundle fzf
+antigen bundle copybuffer
+antigen bundle copyfile
+antigen bundle copypath
 antigen bundle fd
+antigen bundle fzf
+antigen bundle gitfast
 antigen bundle ripgrep
 antigen bundle sudo
-antigen bundle copypath
-antigen bundle copyfile
-antigen bundle copybuffer
+antigen bundle z
 
 antigen theme romkatv/powerlevel10k
 
