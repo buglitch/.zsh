@@ -1,16 +1,21 @@
 #!/bin/sh
+
+# P10K instant prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Generate ~/.zsh/p10k.zsh 
+generate_p10k_config() {
 while [[ ! -f ~/.zsh/p10k.zsh ]]; do
-  cat "$ADOTDIR/bundles/romkatv/powerlevel10k/config/p10k-lean-8colors.zsh" |
-    sed 's/nerdfont-complete/ascii/g' |
-    sed 's/─/-/g' | sed 's/❯/>/g' | sed 's/❮/</g' | sed 's/▶/^/g' |
-    sed 's/…/\.\./g' | sed 's/⇣/</g' | sed 's/⇡/>/g' | sed 's/⇠/<-/g' | 
-    sed 's/⇢/->/g' | sed 's/✔/ok/g' | sed 's/✘/err/g' |
-    sed "s/'%K{0}▁' '%K{0}▂' '%K{0}▃' '%K{0}▄' '%K{0}▅' '%K{0}▆' '%K{0}▇' '%K{0}█'/'battery'/g" > ~/.zsh/p10k.zsh
-done
+cat "$ADOTDIR/bundles/romkatv/powerlevel10k/config/p10k-lean-8colors.zsh" |
+sed 's/nerdfont-complete/ascii/g' |
+sed 's/─/-/g' | sed 's/❯/>/g' | sed 's/❮/</g' | sed 's/▶/^/g' |
+sed 's/…/\.\./g' | sed 's/⇣/</g' | sed 's/⇡/>/g' | sed 's/⇠/<-/g' | 
+sed 's/⇢/->/g' | sed 's/✔/ok/g' | sed 's/✘/err/g' |
+sed "s/'%K{0}▁' '%K{0}▂' '%K{0}▃' '%K{0}▄' '%K{0}▅' '%K{0}▆' '%K{0}▇' '%K{0}█'/'battery'/g" > ~/.zsh/p10k.zsh
 
-source ~/.zsh/p10k.zsh
-
-typeset -g POWERLEVEL9K_DIR_CLASSES=()
+echo "typeset -g POWERLEVEL9K_DIR_CLASSES=()
 typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION=
 typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_VISUAL_IDENTIFIER_EXPANSION=
 typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_VISUAL_IDENTIFIER_EXPANSION=
@@ -26,4 +31,6 @@ typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=6
 typeset -g POWERLEVEL9K_STATUS_ERROR=true
 typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=16
 function p10k-on-pre-prompt() {}
-function p10k-on-post-prompt() {}
+function p10k-on-post-prompt() {}" >> ~/.zsh/p10k.zsh
+done
+}

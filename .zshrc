@@ -1,7 +1,5 @@
 # P10K instant prompt
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+[[ ! -f ~/.zsh/p10k.sh ]] || source ~/.zsh/p10k.sh
 
 # Aliases
 [[ ! -f ~/.zsh/aliases.sh ]] || source ~/.zsh/aliases.sh
@@ -53,4 +51,8 @@ antigen theme romkatv/powerlevel10k
 antigen apply
 
 # P10K prompt config
-[[ ! -f ~/.zsh/p10k.sh ]] || source ~/.zsh/p10k.sh
+while [[ ! -f ~/.zsh/p10k.zsh ]]; do
+  generate_p10k_config
+done
+
+source ~/.zsh/p10k.zsh
