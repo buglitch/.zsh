@@ -27,3 +27,7 @@ alias reset='tput reset'
 alias rm='rm -i'
 alias vi="nvim"
 alias vim="nvim"
+
+# vim terminal
+alias ':e'=' nvr --remote'
+alias ':q'=' exit'
