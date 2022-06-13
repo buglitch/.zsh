@@ -44,6 +44,7 @@ antigen bundle sudo
 antigen bundle z
 
 [[ -z "${ZSHRC_P10K_PROMPT}" ]] || antigen theme romkatv/powerlevel10k
+[[ -z "${ZSHRC_CUSTOM_PROMPT}" ]] || antigen theme ${ZSHRC_CUSTOM_PROMPT}
 
 antigen apply
 
@@ -53,6 +54,8 @@ if [[ ! -z "${ZSHRC_P10K_PROMPT}" ]]; then
     generate_p10k_config
   done
   source ~/.zsh/p10k.zsh
-else
+fi
+
+if [[ -z "${ZSHRC_CUSTOM_PROMPT}" ]]; then
   source ~/.zsh/prompt.zsh
 fi
