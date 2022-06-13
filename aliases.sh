@@ -29,16 +29,18 @@ alias vi="nvim"
 alias vim="nvim"
 
 # vim terminal
-vim_alias() {
-    n="$1"
-    v="$2"
-    for (( i=$3; i<=${#n}; i++ )); do alias ":${n:0:$i}"=" $v"; done
-}
+if [ ! -z ${VIMRUNTIME} ]; then
+    vim_alias() {
+        n="$1"
+        v="$2"
+        for (( i=$3; i<=${#n}; i++ )); do alias ":${n:0:$i}"=" $v"; done
+    }
 
-vim_alias 'edit' 'nvr --remote' 1
-vim_alias 'quit' 'exit' 1
-vim_alias 'split' 'nvr -o' 2
-vim_alias 'tabedit' 'nvr -p' 4
-vim_alias 'vsplit' 'nvr -O' 2
+    vim_alias 'edit' 'nvr --remote' 1
+    vim_alias 'quit' 'exit' 1
+    vim_alias 'split' 'nvr -o' 2
+    vim_alias 'tabedit' 'nvr -p' 4
+    vim_alias 'vsplit' 'nvr -O' 2
 
-unset -f vim_alias
+    unset -f vim_alias
+fi
