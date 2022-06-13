@@ -1,8 +1,8 @@
 # P10K instant prompt
 [[ -z "${ZSHRC_P10K_PROMPT}" ]] || [[ ! -f ~/.zsh/p10k.sh ]] || source ~/.zsh/p10k.sh
 
-# Base16 shell
-[[ ! -f ~/.zsh/base16.sh ]] || source ~/.zsh/base16.sh
+# Color scheme
+[[ ! -f ~/.zsh/colors.sh ]] || source ~/.zsh/colors.sh
 
 # Aliases
 [[ ! -f ~/.zsh/aliases.sh ]] || source ~/.zsh/aliases.sh
