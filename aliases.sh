@@ -1,5 +1,5 @@
 # colors
-alias bat='PAGER=cat bat --color=auto --theme=base16-256 --italic-text=always'
+alias bat='PAGER=cat bat --color=auto --theme=base16 --italic-text=always'
 alias diff='diff --color=auto'
 alias dir='dir --color=auto'
 alias dmesg='dmesg --color=auto'
