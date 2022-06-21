@@ -20,6 +20,7 @@ alias sudo='sudo '
 # override
 alias cp='cp -i'
 alias emacs='emacs -nw'
+alias gdb-multiarch='gdb-multiarch -q'
 alias gdb='gdb -q'
 alias i3lock='i3lock -c 000000'
 alias mv='mv -i'
