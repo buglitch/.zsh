@@ -56,6 +56,6 @@ if [[ ! -z "${ZSHRC_P10K_PROMPT}" ]]; then
   source ~/.zsh/p10k.zsh
 fi
 
-if [[ -z "${ZSHRC_CUSTOM_PROMPT}" ]]; then
+if [[ -z "${ZSHRC_CUSTOM_PROMPT}" ]] && [[ -z "${ZSHRC_P10K_PROMPT}" ]]; then
   source ~/.zsh/prompt.zsh
 fi
