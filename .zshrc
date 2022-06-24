@@ -36,12 +36,13 @@ antigen use oh-my-zsh
 antigen bundle copybuffer
 antigen bundle copyfile
 antigen bundle copypath
-antigen bundle fd
-antigen bundle fzf
 antigen bundle gitfast
-antigen bundle ripgrep
 antigen bundle sudo
 antigen bundle z
+
+for package in "${ZSHRC_ANTIGEN_EXTRA_PACKAGES[@]}"; do
+  antigen bundle "${package}"
+done
 
 [[ -z "${ZSHRC_P10K_PROMPT}" ]] || antigen theme romkatv/powerlevel10k
 [[ -z "${ZSHRC_CUSTOM_PROMPT}" ]] || antigen theme ${ZSHRC_CUSTOM_PROMPT}
