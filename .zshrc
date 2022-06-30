@@ -1,5 +1,7 @@
 # P10K instant prompt
-[[ -z "${ZSHRC_P10K_PROMPT}" ]] || [[ ! -f ~/.zsh/p10k.sh ]] || source ~/.zsh/p10k.sh
+if [[ ! -z "${ZSHRC_P10K_PROMPT}" ]]; then
+  [[ ! -f ~/.zsh/p10k.sh ]] || source ~/.zsh/p10k.sh
+fi
 
 # Color scheme
 [[ ! -f ~/.zsh/colors.sh ]] || source ~/.zsh/colors.sh
