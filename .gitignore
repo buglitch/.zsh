@@ -1,4 +1,5 @@
 *.zwc
-antigen/
+.zsh_history
 antigen.zsh
+antigen/
 p10k.zsh

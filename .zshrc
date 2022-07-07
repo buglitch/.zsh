@@ -14,6 +14,7 @@ fi
 setopt hist_ignore_all_dups
 setopt hist_find_no_dups
 setopt hist_save_no_dups
+HISTFILE=~/.zsh/.zsh_history
 HISTORY_IGNORE="(exit|halt|logout|poweroff|reboot|shutdown|suspend)*"
 
 # OMZ config

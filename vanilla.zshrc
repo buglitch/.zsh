@@ -22,8 +22,8 @@ compinit
 bashcompinit
 
 # history
-HISTFILE=~/.zhistory
-HISTORY_IGNORE="(exit|logout|poweroff|reboot|shutdown|suspend)*"
+HISTFILE=~/.zsh/.zsh_history
+HISTORY_IGNORE="(exit|halt|logout|poweroff|reboot|shutdown|suspend)*"
 HISTSIZE=1000
 SAVEHIST=500
 
