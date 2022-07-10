@@ -17,7 +17,7 @@ dash_line() {
 }
 add-zsh-hook -Uz precmd dash_line
 if [[ $UID == 0 || $EUID == 0 ]]; then
-    export PROMPT=$'%n:%1~%(?..%{\e[31m%}[%?]%{\e[39m%})%{\e[31m%}%#%{\e[39m%} '
+    export PROMPT=$'%n:%1~%(?..%{\e[31m%}[%?]%{\e[39m%})%{\e[95m%}%#%{\e[39m%} '
 else
-    export PROMPT=$'%n:%1~%(?..%{\e[31m%}[%?]%{\e[39m%})%{\e[35m%}\$%{\e[39m%} '
+    export PROMPT=$'%n:%1~%(?..%{\e[31m%}[%?]%{\e[39m%})%{\e[94m%}\$%{\e[39m%} '
 fi
