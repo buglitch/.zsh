@@ -39,6 +39,7 @@ antigen use oh-my-zsh
 antigen bundle copybuffer
 antigen bundle copyfile
 antigen bundle copypath
+antigen bundle dirhistory
 antigen bundle gitfast
 antigen bundle sudo
 antigen bundle z
