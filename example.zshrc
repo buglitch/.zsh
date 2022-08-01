@@ -1,5 +1,8 @@
 # Example .zshrc configuration
 
+# Source profile
+[[ ! -f ~/.profile ]] || source ~/.profile
+
 # Use the powerlevel10k prompt
 #ZSHRC_P10K_PROMPT=y
 
