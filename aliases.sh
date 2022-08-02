@@ -13,6 +13,7 @@ alias ncdu='ncdu --color=dark'
 alias rg='rg --color=auto'
 alias tree='tree -C'
 alias vdir='vdir --color=auto'
+alias vgrep='fgrep --color=auto'
 
 # sudo with aliases
 alias sudo='sudo '
