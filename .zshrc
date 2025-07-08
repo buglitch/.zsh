@@ -53,6 +53,9 @@ done
 
 antigen apply
 
+# post antigen fix
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
 # prompt config
 if [[ ! -z "${ZSHRC_P10K_PROMPT}" ]]; then
   while [[ ! -f ~/.zsh/p10k.zsh ]]; do
