@@ -1,3 +1,4 @@
+#!/bin/sh
 # colors
 alias bat='PAGER=cat bat --color=auto --theme=ansi --italic-text=always'
 alias diff='diff --color=auto'

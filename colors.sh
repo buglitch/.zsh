@@ -1,4 +1,5 @@
 #!/bin/sh
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 if [ -n "$TMUX" ]; then
   put_template() { printf '\033Ptmux;\033\033]4;%d;rgb:%s\033\033\\\033\\' $@; }

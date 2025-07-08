@@ -3,9 +3,6 @@ if [[ ! -z "${ZSHRC_P10K_PROMPT}" ]]; then
   [[ ! -f ~/.zsh/p10k.sh ]] || source ~/.zsh/p10k.sh
 fi
 
-# Color scheme
-[[ ! -f ~/.zsh/colors.sh ]] || source ~/.zsh/colors.sh
-
 # Aliases
 [[ ! -f ~/.zsh/aliases.sh ]] || source ~/.zsh/aliases.sh
 [[ ! -f ~/.aliases ]] || source ~/.aliases
@@ -53,8 +50,8 @@ done
 
 antigen apply
 
-# post antigen fix
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# Color scheme
+[[ ! -f ~/.zsh/colors.sh ]] || source ~/.zsh/colors.sh
 
 # prompt config
 if [[ ! -z "${ZSHRC_P10K_PROMPT}" ]]; then
