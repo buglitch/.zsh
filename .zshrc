@@ -3,6 +3,8 @@ if [[ ! -z "${ZSHRC_P10K_PROMPT}" ]]; then
   [[ ! -f ~/.zsh/p10k.sh ]] || source ~/.zsh/p10k.sh
 fi
 
+export PATH="${HOME}/.local/bin:${PATH}"
+
 # ZSH config
 setopt hist_ignore_all_dups
 setopt hist_find_no_dups
