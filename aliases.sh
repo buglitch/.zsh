@@ -31,9 +31,9 @@ alias rm='rm -i'
 
 # optional overrides
 ealias() {
-  command -v "${2}" >/dev/null 2>&1 && alias "${1}"="${2} ${@:3}"
+  command -v "${2}" >/dev/null 2>&1 && alias "${1}"="${2} ${*:3}"
 }
-ealias cat PAGER=cat bat --color=auto --theme=ansi --italic-text=always
+ealias cat bat --color=auto -p --theme=ansi --italic-text=always
 ealias df duf --hide-fs squashfs,tmpfs,devtmpfs
 ealias diff batdiff
 ealias find fd
