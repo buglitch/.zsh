@@ -38,6 +38,8 @@ antigen bundle dirhistory
 antigen bundle gitfast
 antigen bundle sudo
 antigen bundle z
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 for package in "${ZSHRC_ANTIGEN_EXTRA_PACKAGES[@]}"; do
   antigen bundle "${package}"
