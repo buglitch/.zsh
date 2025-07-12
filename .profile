@@ -1,3 +1,10 @@
+function pathadd {
+    PATH=:$PATH
+    export PATH=$1${PATH//:$1:/:}
+}
+
+pathadd "$HOME/.local/bin"
+
 export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=zen-twilight
