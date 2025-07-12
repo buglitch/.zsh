@@ -3,10 +3,6 @@ if [[ ! -z "${ZSHRC_P10K_PROMPT}" ]]; then
   [[ ! -f ~/.zsh/p10k.sh ]] || source ~/.zsh/p10k.sh
 fi
 
-# Aliases
-[[ ! -f ~/.zsh/aliases.sh ]] || source ~/.zsh/aliases.sh
-[[ ! -f ~/.aliases ]] || source ~/.aliases
-
 # ZSH config
 setopt hist_ignore_all_dups
 setopt hist_find_no_dups
@@ -52,6 +48,10 @@ antigen apply
 
 # Color scheme
 [[ ! -f ~/.zsh/colors.sh ]] || source ~/.zsh/colors.sh
+
+# Aliases
+[[ ! -f ~/.zsh/aliases.sh ]] || source ~/.zsh/aliases.sh
+[[ ! -f ~/.aliases ]] || source ~/.aliases
 
 # prompt config
 if [[ ! -z "${ZSHRC_P10K_PROMPT}" ]]; then

@@ -1,6 +1,5 @@
 #!/bin/sh
 # colors
-alias bat='PAGER=cat bat --color=auto --theme=ansi --italic-text=always'
 alias diff='diff --color=auto'
 alias dir='dir --color=auto'
 alias dmesg='dmesg --color=auto'
@@ -9,7 +8,7 @@ alias fd='fd --color=auto'
 alias fgrep='fgrep --color=auto'
 alias fzf='fzf --color=16'
 alias grep='grep --color=auto'
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 alias minicom='minicom --color=on'
 alias ncdu='ncdu --color=dark'
 alias rg='rg --color=auto'
@@ -27,11 +26,27 @@ alias gdb-multiarch='gdb-multiarch -q'
 alias gdb='gdb -q'
 alias i3lock='i3lock -c 000000'
 alias mv='mv -i'
-alias ranger='source ranger'
 alias reset='tput reset'
 alias rm='rm -i'
-alias vi="nvim"
-alias vim="nvim"
+
+# optional overrides
+ealias() {
+  command -v "${2}" >/dev/null 2>&1 && alias "${1}"="${2} ${@:3}"
+}
+ealias cat PAGER=cat bat --color=auto --theme=ansi --italic-text=always
+ealias df duf --hide-fs squashfs,tmpfs,devtmpfs
+ealias diff batdiff
+ealias find fd
+ealias grep batgrep
+ealias ls eza --icons
+ealias man batman
+ealias pacman paru
+ealias ping gping
+ealias ranger source ranger
+ealias rg batgrep
+ealias vi nvim
+ealias vim nvim
+ealias watch batwatch
 
 # vim terminal
 if [ ! -z ${VIMRUNTIME} ]; then
