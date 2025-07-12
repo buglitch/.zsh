@@ -1,4 +1,6 @@
 # P10K instant prompt
+[ -f ~/.zsh/.profile ] && source ~/.zsh/.profile
+
 if [[ ! -z "${ZSHRC_P10K_PROMPT}" ]]; then
   [[ ! -f ~/.zsh/p10k.sh ]] || source ~/.zsh/p10k.sh
 fi
