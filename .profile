@@ -5,6 +5,8 @@ function pathadd {
 
 pathadd "$HOME/.local/bin"
 
+export GTK_THEME=adw-gtk3
+
 export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=zen-twilight

@@ -37,13 +37,12 @@ ealias cat bat --color=auto -p --theme=ansi --italic-text=always
 ealias df duf --hide-fs squashfs,tmpfs,devtmpfs
 ealias diff batdiff
 ealias find fd
-ealias grep batgrep
+ealias grep rg
 ealias ls eza --icons
 ealias man batman
 ealias pacman paru
 ealias ping gping
 ealias ranger source ranger
-ealias rg batgrep
 ealias vi nvim
 ealias vim nvim
 ealias watch batwatch
