@@ -3,6 +3,8 @@ function pathadd {
     export PATH=$1${PATH//:$1:/:}
 }
 
+[[ -f ~/.keys ]] && . ~/.keys
+
 pathadd "$HOME/.local/bin"
 
 export GTK_THEME=adw-gtk3
