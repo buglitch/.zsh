@@ -28,6 +28,7 @@ alias i3lock='i3lock -c 000000'
 alias mv='mv -i'
 alias reset='tput reset'
 alias rm='rm -i'
+alias unzip='bsdtar -xf'
 
 # optional overrides
 ealias() {
