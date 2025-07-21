@@ -7,6 +7,7 @@ function pathadd {
 
 pathadd "$HOME/.local/bin"
 
+export $(dbus-launch)
 export GTK_THEME=adw-gtk3
 
 export EDITOR=nvim
