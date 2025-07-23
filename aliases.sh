@@ -29,6 +29,7 @@ alias mv='mv -i'
 alias reset='tput reset'
 alias rm='rm -i'
 alias unzip='bsdtar -xf'
+alias fastfetch='fastfetch --config ~/.config/fastfetch.jsonc'
 
 # optional overrides
 ealias() {
