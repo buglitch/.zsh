@@ -6,7 +6,7 @@ dash_line() {
     local ret=${?}
     local var=$history[$((HISTCMD - 1))]
 
-    if [ $dash_var -eq 1 ] && [ "$var" != "clear" ] && [ "$var" != "reset" ]; then
+    if [[ ($dash_var -eq 2) || ($dash_var -eq 1 && "$var" != "clear" && "$var" != "reset") ]]; then
         local prefix=""
         if [ $ret -eq 0 ]; then
             local suffix=" 󰄬 "
@@ -20,6 +20,11 @@ dash_line() {
         fi
     else
         dash_var=1
+    fi
+    if [ "$var" != "clear" ] && [ "$var" != "reset" ]; then
+        dash_var=1
+    else
+        dash_var=2
     fi
 }
 add-zsh-hook -Uz precmd dash_line
