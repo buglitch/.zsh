@@ -17,6 +17,7 @@ set +o list_types
 # OMZ config
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 zstyle ':omz:update' mode disabled
+zstyle ':omz:git' async-prompt yes
 
 # Antigen
 export ADOTDIR=~/.zsh/antigen

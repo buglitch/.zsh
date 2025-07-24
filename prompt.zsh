@@ -7,13 +7,23 @@ dash_line() {
     local var=$history[$((HISTCMD - 1))]
 
     if [[ ($dash_var -eq 2) || ($dash_var -eq 1 && "$var" != "clear" && "$var" != "reset") ]]; then
-        local prefix=""
         if [ $ret -eq 0 ]; then
+            local git_branch="$(git_current_branch)"
+            if [ -z "${git_branch}" ]; then
+                local prefix=""
+            else
+                local prefix="󰊢 ${git_branch}$(parse_git_dirty) "
+            fi
             local suffix=" 󰄬 "
             local padding=$((${#suffix} + ${#prefix}))
             echo -e "\e[32m${prefix}${(r:$COLUMNS-${padding}::-:)}${suffix}\e[39m"
         else
-            local prefix="[${ret}] "
+            local git_branch="$(git_current_branch)"
+            if [ -z "${git_branch}" ]; then
+                local prefix="[${ret}] "
+            else
+                local prefix="[${ret}] 󰊢 ${git_branch}$(parse_git_dirty) "
+            fi
             local suffix=" 󰅖 "
             local padding=$((${#suffix} + ${#prefix}))
             echo -e "\e[31m${prefix}${(r:$COLUMNS-${padding}::-:)}${suffix}\e[39m"
