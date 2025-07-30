@@ -10,6 +10,7 @@ pathadd "$HOME/.local/bin"
 export $(dbus-launch)
 export GTK_THEME=adw-gtk3
 
+
 export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=zen-twilight
@@ -20,9 +21,12 @@ export SHELL=/bin/zsh
 
 export GIT_EDITOR=nvim
 export SYSTEMD_EDITOR=nvim
+
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
+
+export MAKEFLAGS="--no-print-directory"
 
 export LANG=C.UTF-8
 export LC_ALL=C.UTF-8
