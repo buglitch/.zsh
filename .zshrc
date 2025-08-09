@@ -40,7 +40,6 @@ antigen bundle copypath
 antigen bundle dirhistory
 antigen bundle gitfast
 antigen bundle sudo
-antigen bundle z
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 

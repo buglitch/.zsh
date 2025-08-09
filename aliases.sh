@@ -36,6 +36,7 @@ alias yazi='y'
 ealias() {
   command -v "${2}" >/dev/null 2>&1 && alias "${1}"="${2} ${*:3}"
 }
+ealias LS sl
 ealias cat bat --color=auto -p --theme=ansi --italic-text=always
 ealias df duf --hide-fs squashfs,tmpfs,devtmpfs
 ealias diff batdiff
@@ -49,6 +50,8 @@ ealias ranger source ranger
 ealias vi nvim
 ealias vim nvim
 ealias watch batwatch
+
+eval "$(zoxide init --cmd cd zsh)"
 
 # vim terminal
 if [ ! -z ${VIMRUNTIME} ]; then
