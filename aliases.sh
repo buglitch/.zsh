@@ -20,6 +20,7 @@ alias vgrep='fgrep --color=auto'
 alias sudo='sudo '
 
 # override
+alias tty-clock='tty-clock -s -c -C 7'
 alias cp='cp -i'
 alias emacs='emacs -nw'
 alias gdb-multiarch='gdb-multiarch -q'
@@ -38,6 +39,7 @@ ealias() {
 }
 ealias LS sl
 ealias cat bat --color=auto -p --theme=ansi --italic-text=always
+ealias code codium
 ealias df duf --hide-fs squashfs,tmpfs,devtmpfs
 ealias diff batdiff
 ealias find fd
