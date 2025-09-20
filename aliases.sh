@@ -44,7 +44,7 @@ ealias df duf --hide-fs squashfs,tmpfs,devtmpfs
 ealias diff batdiff
 ealias find fd
 ealias grep rg
-ealias ls eza --icons
+ealias ls eza --icons=auto
 ealias man batman
 ealias pacman paru
 ealias ping gping
