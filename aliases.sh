@@ -12,7 +12,7 @@ alias ls='ls --color=auto'
 alias minicom='minicom --color=on'
 alias ncdu='ncdu --color=dark'
 alias rg='rg --color=auto'
-alias tree='tree -C'
+alias tree='tree -C -L 2'
 alias vdir='vdir --color=auto'
 alias vgrep='fgrep --color=auto'
 
@@ -20,35 +20,37 @@ alias vgrep='fgrep --color=auto'
 alias sudo='sudo '
 
 # override
-alias tty-clock='tty-clock -s -c -C 7'
 alias cp='cp -i'
 alias emacs='emacs -nw'
+alias fastfetch='fastfetch --config ~/.config/fastfetch.jsonc'
+alias fd='fdfind'
 alias gdb-multiarch='gdb-multiarch -q'
 alias gdb='gdb -q'
 alias i3lock='i3lock -c 000000'
 alias mv='mv -i'
 alias reset='tput reset'
 alias rm='rm -i'
+alias tty-clock='tty-clock -s -c -C 7'
 alias unzip='bsdtar -xf'
-alias fastfetch='fastfetch --config ~/.config/fastfetch.jsonc'
 alias yazi='y'
 
 # optional overrides
 ealias() {
+  command -v "${2}" >/dev/null 2>&1 && alias "${1}"="${2}"
+}
+eealias() {
   command -v "${2}" >/dev/null 2>&1 && alias "${1}"="${2} ${*:3}"
 }
 ealias LS sl
-ealias cat bat --color=auto -p --theme=ansi --italic-text=always
+#ealias cat bat --color=auto -p --theme=ansi --italic-text=always
+eealias bat batcat --color=auto --style=header --italic-text=always --paging=never
 ealias code codium
-ealias df duf --hide-fs squashfs,tmpfs,devtmpfs
+eealias df duf --hide-fs squashfs,tmpfs,devtmpfs
 ealias diff batdiff
-ealias find fd
-ealias grep rg
-ealias ls eza --icons=auto
+eealias ls eza --icons=auto
 ealias man batman
 ealias pacman paru
-ealias ping gping
-ealias ranger source ranger
+eealias ranger source ranger
 ealias vi nvim
 ealias vim nvim
 ealias watch batwatch
