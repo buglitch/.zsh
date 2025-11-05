@@ -47,7 +47,7 @@ eealias bat batcat --color=auto --style=header --italic-text=always --paging=nev
 ealias code codium
 eealias df duf --hide-fs squashfs,tmpfs,devtmpfs
 ealias diff batdiff
-eealias ls eza --icons=auto
+eealias ls eza --icons=auto --group-directories-first
 ealias man batman
 ealias pacman paru
 eealias ranger source ranger
@@ -58,21 +58,19 @@ ealias watch batwatch
 eval "$(zoxide init --cmd cd zsh)"
 
 # vim terminal
+vim_alias() {
+    n="$1"
+    v="$2"
+    for (( i=$3; i<=${#n}; i++ )); do alias ":${n:0:$i}"=" $v"; done
+}
+vim_alias 'quit' 'exit' 1
 if [ ! -z ${VIMRUNTIME} ]; then
-    vim_alias() {
-        n="$1"
-        v="$2"
-        for (( i=$3; i<=${#n}; i++ )); do alias ":${n:0:$i}"=" $v"; done
-    }
-
     vim_alias 'edit' 'nvr --remote' 1
-    vim_alias 'quit' 'exit' 1
     vim_alias 'split' 'nvr -o' 2
     vim_alias 'tabedit' 'nvr -p' 4
     vim_alias 'vsplit' 'nvr -O' 2
-
-    unset -f vim_alias
 fi
+unset -f vim_alias
 
 # wrappers
 function y() {
