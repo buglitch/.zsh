@@ -47,7 +47,7 @@ eealias bat batcat --color=auto --style=header --italic-text=always --paging=nev
 ealias code codium
 eealias df duf --hide-fs squashfs,tmpfs,devtmpfs
 ealias diff batdiff
-eealias ls eza --icons=auto --group-directories-first
+eealias ls eza --icons=auto -s type
 ealias man batman
 ealias pacman paru
 eealias ranger source ranger
