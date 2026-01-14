@@ -7,7 +7,7 @@ function timer() {
   timer=${timer:-$SECONDS}
 }
 
-dash_line() {
+function dash_line() {
     local ret=${?}
     local var=$history[$((HISTCMD - 1))]
 
@@ -29,7 +29,7 @@ dash_line() {
                 local suffix=" (${timer_show}s) 󰄬 "
             fi
             local padding=$((${#suffix} + ${#prefix}))
-            echo -e "\e[32m${prefix}${(r:$COLUMNS-${padding}::-:)}${suffix}\e[39m"
+            echo -e "\e[34m${prefix}${(r:$COLUMNS-${padding}::-:)}${suffix}\e[39m"
         else
             if [ -z "${git_branch}" ]; then
                 local prefix="[${ret}] "
@@ -42,7 +42,7 @@ dash_line() {
                 local suffix=" (${timer_show}s) 󰅖 "
             fi
             local padding=$((${#suffix} + ${#prefix}))
-            echo -e "\e[31m${prefix}${(r:$COLUMNS-${padding}::-:)}${suffix}\e[39m"
+            echo -e "\e[35m${prefix}${(r:$COLUMNS-${padding}::-:)}${suffix}\e[39m"
         fi
     else
         dash_var=1
@@ -54,10 +54,14 @@ dash_line() {
     fi
     unset timer
 }
+function set_title() {
+    print -Pn "\e]0;%~\a"
+}
 add-zsh-hook -Uz preexec timer
 add-zsh-hook -Uz precmd dash_line
+add-zsh-hook -Uz precmd set_title
 if [[ $UID == 0 || $EUID == 0 ]]; then
-    export PROMPT=$'%n@%m:%1~%(?..%{\e[31m%}%{\e[39m%})%{\e[95m%}%#%{\e[39m%} '
+    export PROMPT=$'%n:%1~%(?..%{\e[31m%}%{\e[39m%})%{\e[91m%}%#%{\e[39m%} '
 else
-    export PROMPT=$'%n@%m:%1~%(?..%{\e[31m%}%{\e[39m%})%{\e[92m%}λ%{\e[39m%} '
+    export PROMPT=$'%n:%1~%(?..%{\e[31m%}%{\e[39m%})%{\e[95m%}$%{\e[39m%} '
 fi

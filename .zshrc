@@ -6,10 +6,11 @@ if [[ ! -z "${ZSHRC_P10K_PROMPT}" ]]; then
 fi
 
 # ZSH config
-setopt hist_ignore_all_dups
 setopt hist_find_no_dups
-setopt hist_save_no_dups
+setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
+setopt hist_save_no_dups
+#setopt ksh_arrays
 HISTFILE=~/.zsh/.zsh_history
 HISTORY_IGNORE="(exit|halt|logout|poweroff|reboot|shutdown|suspend)*"
 set +o list_types
@@ -40,7 +41,7 @@ antigen bundle copypath
 antigen bundle dirhistory
 antigen bundle gitfast
 antigen bundle sudo
-antigen bundle zsh-users/zsh-autosuggestions
+#antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 for package in "${ZSHRC_ANTIGEN_EXTRA_PACKAGES[@]}"; do
@@ -69,4 +70,9 @@ fi
 
 if [[ -z "${ZSHRC_CUSTOM_PROMPT}" ]] && [[ -z "${ZSHRC_P10K_PROMPT}" ]]; then
   source ~/.zsh/prompt.zsh
+fi
+
+if [[ -z "$ZELLIJ" ]]; then
+    zellij attach --create $(cat /dev/urandom | tr -dc 'a-z' | fold -w 1 | head -n 1)
+    exit
 fi

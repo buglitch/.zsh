@@ -3,6 +3,7 @@ setopt appendhistory
 setopt autocd
 setopt histignorealldups
 setopt interactivecomments
+setopt ksh_arrays
 setopt nobeep
 setopt noclobber
 setopt nolisttypes
