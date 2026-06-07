@@ -13,7 +13,7 @@ export GTK_THEME=adw-gtk3
 
 export EDITOR=nvim
 export VISUAL=nvim
-export BROWSER=zen-twilight
+export BROWSER=firefox
 export PAGER="bat -p"
 export MANPAGER="bat -l man -p"
 export TERMINAL=foot
