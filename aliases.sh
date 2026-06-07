@@ -23,7 +23,6 @@ alias sudo='sudo '
 alias cp='cp -i'
 alias emacs='emacs -nw'
 alias fastfetch='fastfetch --config ~/.config/fastfetch.jsonc'
-alias fd='fdfind'
 alias gdb-multiarch='gdb-multiarch -q'
 alias gdb='gdb -q'
 alias i3lock='i3lock -c 000000'
@@ -44,6 +43,7 @@ eealias() {
 ealias LS sl
 #ealias cat bat --color=auto -p --theme=ansi --italic-text=always
 eealias bat batcat --color=auto --style=header --italic-text=always --paging=never
+ealias fd=fdfind
 ealias code codium
 eealias df duf --hide-fs squashfs,tmpfs,devtmpfs
 ealias diff batdiff
